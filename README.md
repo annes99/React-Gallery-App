@@ -1,4 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Gallery App
+
+> An image gallery app using React and the handy Create React App tool to build a fast and lightweight gallery app with a modern approach. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+* JavaScript and JSX to build out the gallery components in a modular fashion
+* React Router to set up routes for three default topic pages and a search page
+* Fetch API to fetch data from the Flickr API and use it to display images
+
+## Technologies
+
+* JavaScript
+* React
+* CSS
+* HTML
+
+## Demo
+
+## Screenshot
+
+## Status
+
+Project is: _IN PROGRESS_
+
+## Inspiration
+
+Treehouse Techdegree: FSJS project 7 - React Gallery App
+
+## CSS style changes
+
 
 ## Available Scripts
 
@@ -66,3 +96,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Contact
+
+Created by [@Annes](https://twitter.com/annesCode)
