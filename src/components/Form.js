@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // using withRouter so I can make use of 'history' 
 // because its nested child of a component rendered by the Router
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 
 class Form extends Component {
@@ -30,9 +30,10 @@ class Form extends Component {
     render() {
         return (
             <form className="search-form" onSubmit={this.handleSubmit}>
+
                 <input type="search"
                     name="search"
-                    placeholder="Search"
+                    placeholder="Search images"
                     required
                     ref={(input) => this.query = input}
                     onChange={this.onSearchChange}
@@ -43,7 +44,9 @@ class Form extends Component {
                         <path d="M0 0h24v24H0z" fill="none" />
                     </svg>
                 </button>
+                <NavLink className="home-button" to='/'><span className="home">Home</span></NavLink>
             </form>
+            
         );
     }
 

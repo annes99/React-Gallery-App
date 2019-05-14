@@ -17,9 +17,10 @@ export default class App extends Component {
     super();
     this.state = {
       photos: [],
-      cats: [],
-      dogs: [],
-      computers: [],
+      sunrise:[],
+      sunset: [],
+      waterfall: [],
+      rainbow: [],
       tag: [],
       loading: true,
     };
@@ -27,9 +28,10 @@ export default class App extends Component {
 
   componentDidMount() {
     this.performSearch();
-    this.performSearch('cats');
-    this.performSearch('dogs');
-    this.performSearch('computers');
+    this.performSearch('sunrise');
+    this.performSearch('sunset');
+    this.performSearch('waterfall');
+    this.performSearch('rainbow');
 
   }
 
@@ -39,7 +41,7 @@ export default class App extends Component {
       .then(response => {
         // handle success
 
-        if (query === 'cats' || query === 'dogs' || query === 'computers') {
+        if (query === 'sunset' || query === 'waterfall' || query === 'rainbow' || query === 'sunrise') {
           this.setState({
             [query]: response.data.photos.photo,
             loading: false
@@ -71,9 +73,10 @@ export default class App extends Component {
 
             <Route exact path="/" />
             <Route path="/search/:tag" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.photos} searchTitle={this.state.tag} />} />
-            <Route exact path="/cats" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.cats} searchTitle="cats" />} />
-            <Route exact path="/dogs" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.dogs} searchTitle="dogs" />} />
-            <Route exact path="/computers" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.computers} searchTitle="computers" />} />
+            <Route exact path="/sunset" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.sunset} searchTitle="sunset" />} />
+            <Route exact path="/waterfall" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.waterfall} searchTitle="waterfall" />} />
+            <Route exact path="/rainbow" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.rainbow} searchTitle="rainbow" />} />
+            <Route exact path="/sunrise" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.sunrise} searchTitle="sunrise" />} />
             <Route component={ErrorPage} />
 
           </Switch>
