@@ -35,6 +35,8 @@ Treehouse Techdegree: FSJS project 7 - React Gallery App
 
 ## Setup
 
+* Apply for a  Flickr API key [non-commercial API key](https://www.flickr.com/services/apps/create/apply/)
+
 * You’ll need to set up a config.js file in your project (save to src/config.js) that imports your API key into your application so that you and other users can request data from the Flickr API
 
 * The config.js file must look like this:
