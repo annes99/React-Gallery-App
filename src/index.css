@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'lato', sans-serif;
   color: #3f4850;
 }
 
@@ -27,7 +27,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #4c96d7;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -44,6 +44,18 @@ input {
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
 }
+.home {
+  color: #fff;
+}
+
+
+.home-button {
+  border-radius: 3px;
+  background-color: #4c96d7;
+  display: block;
+  margin-left: 10px;
+  padding: 12px;
+}
 
 .main-nav li {
   width: 100%;
@@ -52,7 +64,7 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #4c96d7;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -60,8 +72,9 @@ input {
 
 .main-nav .active,
 .main-nav a:hover,
+.home-button:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: tomato;
 }
 
 .photo-container ul {
@@ -102,6 +115,7 @@ input {
     margin: auto;
   }
 }
+
 
 @media only screen and (min-width: 768px)  {
   body {
