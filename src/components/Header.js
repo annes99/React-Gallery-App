@@ -5,6 +5,7 @@ import Nav from './Nav';
 const Header = props => {
   return (
     <div>
+      {/* adding logo in the header */}
       <img src={require('./logo3.png')} alt=""/>
       <Form onSearch={props.onSearch} />
       <Nav />

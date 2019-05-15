@@ -2,7 +2,7 @@
 
 # React Gallery App
 
-> An image gallery app using React and the handy Create React App tool to build a fast and lightweight gallery app with a modern approach. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> An image gallery app using React and the handy Create React App tool to build a fast and lightweight gallery app with a modern approach. 
 
 ## Features
 
@@ -37,7 +37,7 @@ Treehouse Techdegree: FSJS project 7 - React Gallery App
 
 * Apply for a  Flickr API key [non-commercial API key](https://www.flickr.com/services/apps/create/apply/)
 
-* You’ll need to set up a config.js file in your project (save to src/config.js) that imports your API key into your application so that you and other users can request data from the Flickr API
+* You’ll need to set up a config.js file in your project (save to: src/config.js)
 
 * The config.js file must look like this:
 

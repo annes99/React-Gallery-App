@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import apiKey from '../config';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+
+// importing needed components for app.js
 import Header from './Header';
 import Gallery from './Gallery';
 import ErrorPage from './Error';
 
-import {
-  BrowserRouter,
-  Route,
-  Switch
-} from 'react-router-dom';
+// get a Flickr API key from config.js
+import apiKey from '../config';
+
 
 export default class App extends Component {
 
   constructor() {
     super();
+    // keeping all fetched data states
     this.state = {
       photos: [],
       sunrise:[],
@@ -32,14 +33,13 @@ export default class App extends Component {
     this.performSearch('sunset');
     this.performSearch('waterfall');
     this.performSearch('rainbow');
-
   }
 
+  // fetching data from Flickr API & setState based on query keyword
   performSearch = query => {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(response => {
         // handle success
-
         if (query === 'sunset' || query === 'waterfall' || query === 'rainbow' || query === 'sunrise') {
           this.setState({
             [query]: response.data.photos.photo,
@@ -53,10 +53,11 @@ export default class App extends Component {
             loading: false
           });
 
-        }
+        } 
       })
+      // handle error
       .catch(error => {
-        // handle error
+        
         console.log('Error fetching data', error);
       })
   }
@@ -67,9 +68,10 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Header title="Gallery App" onSearch={this.performSearch} />
-          <Switch>
+          <Header onSearch={this.performSearch} />
 
+          <Switch>
+            {/* routing and rendering data based on fetched data state & showing "Loading" if fetching is not completed */}
             <Route exact path="/" />
             <Route path="/search/:tag" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.photos} searchTitle={this.state.tag} />} />
             <Route exact path="/sunset" render={() => (this.state.loading) ? <p>Loading....</p> : <Gallery data={this.state.sunset} searchTitle="sunset" />} />

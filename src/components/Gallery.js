@@ -7,7 +7,7 @@ const Gallery = props => {
   const results = props.data;
 
   let photos;
-
+  // iterating over app.js state array data and passing data to GalleryItem component to make list of photos
   if (results.length > 0) {
     photos = results.map(photo =>
       <GalleryItem
@@ -17,6 +17,7 @@ const Gallery = props => {
       />
     );
   } else {
+    //  if app.js state array is empty show NotFound component
     photos = <NotFound />
   }
 

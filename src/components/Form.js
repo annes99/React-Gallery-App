@@ -18,9 +18,9 @@ class Form extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        // pass the query value back to the function
-
+        // passing the query value back to the function
         this.props.onSearch(this.query.value);
+        // adding the query value to URL
         let search = this.query.value;
         let path = `/search/${search}`;
         this.props.history.push(path);
@@ -35,7 +35,7 @@ class Form extends Component {
                     name="search"
                     placeholder="Search images"
                     required
-                    ref={(input) => this.query = input}
+                    ref={input => this.query = input}
                     onChange={this.onSearchChange}
                 />
                 <button type="submit" className="search-button">
