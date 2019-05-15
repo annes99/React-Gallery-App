@@ -1,3 +1,4 @@
+
 body {
   text-align: center;
   font-family: 'lato', sans-serif;
@@ -32,6 +33,7 @@ a {
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
+  height: 42px;
 }
 
 input {
@@ -43,6 +45,8 @@ input {
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
+  -webkit-appearance: none;
+  height: 42px;
 }
 .home {
   color: #fff;
@@ -55,6 +59,7 @@ input {
   display: block;
   margin-left: 10px;
   padding: 12px;
+  /* height: 42px; */
 }
 
 .main-nav li {
