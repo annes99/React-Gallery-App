@@ -6,7 +6,7 @@ const Header = props => {
   return (
     <div>
       {/* adding logo in the header */}
-      <img src={require('./logo3.png')} alt=""/>
+      <img src={require('./logo3.png')} alt="website logo"/>
       <Form onSearch={props.onSearch} />
       <Nav />
     </div>
