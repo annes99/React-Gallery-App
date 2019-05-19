@@ -78,18 +78,22 @@ export default class App extends Component {
         <div className="container">
           {/* always showing header, searcbar and nav links, passing performSearch() to Form component */}
           <Header onSearch={this.performSearch} />
-          <Switch>
-            {/* routing and rendering data based on fetched data state & showing "Loading" if fetching is not completed */}
-            <Route exact path="/" />
-            <Route exact path="/search/:tag" render={() => (this.state.loading) ? <Loader /> : <Gallery data={this.state.photos} searchTitle={this.state.tag} />} />
-            <Route exact path="/sunset" render={() => (this.state.loading) ? <Loader />  : <Gallery data={this.state.sunset} searchTitle="sunset" />} />
-            <Route exact path="/waterfall" render={() => (this.state.loading) ? <Loader />  : <Gallery data={this.state.waterfall} searchTitle="waterfall" />} />
-            <Route exact path="/rainbow" render={() => (this.state.loading) ? <Loader />  : <Gallery data={this.state.rainbow} searchTitle="rainbow" />} />
-            <Route exact path="/sunrise" render={() => (this.state.loading) ? <Loader />  : <Gallery data={this.state.sunrise} searchTitle="sunrise" />} />
 
-            <Route component={ErrorPage} />
+          {
+          this.state.loading ? <Loader /> : 
+            <Switch>
+              {/* routing and rendering data based on fetched data state & showing "Loading" if fetching is not completed */}
+              <Route exact path="/" />
+              <Route exact path="/search/:tag" render={() => <Gallery data={this.state.photos} searchTitle={this.state.tag} />} />
+              <Route exact path="/sunset" render={() => <Gallery data={this.state.sunset} searchTitle="sunset" />} />
+              <Route exact path="/waterfall" render={() => <Gallery data={this.state.waterfall} searchTitle="waterfall" />} />
+              <Route exact path="/rainbow" render={() => <Gallery data={this.state.rainbow} searchTitle="rainbow" />} />
+              <Route exact path="/sunrise" render={() => <Gallery data={this.state.sunrise} searchTitle="sunrise" />} />
 
-          </Switch>
+              <Route component={ErrorPage} />
+
+            </Switch>
+          }
         </div>
       </BrowserRouter>
     );
